@@ -1,5 +1,6 @@
 <?php
-
+// TODO: work on form logic, updating database, etc
+include "../php/connect_local.php";
 ?>
 
 <!DOCTYPE html>
@@ -9,6 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/add-market.js"></script>
     <title>Dashboard</title>
 </head>
 
@@ -28,6 +30,7 @@
                 list on marketplace?
             </label>
             <div id="marketplace-input">
+                <hr>
                 <fieldset>
                     <legend for="price">price</legend>
                     <input type="number" step="0.01" min="1" name="price" id="price">
@@ -37,6 +40,7 @@
                     <input type="number" step="1" min="1" max="100" name="stock" id="stock">
                 </fieldset>
             </div>
+            <input id="submit" type="submit" value="post!">
         </form>
     </div>
 </body>
