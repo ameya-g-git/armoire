@@ -1,14 +1,14 @@
 window.addEventListener('load', () => {
     const accountBtns = document.querySelectorAll('#account-btns div');
 
-    console.log(accountBtns);
     if (accountBtns) {
         accountBtns.forEach((elem) => {
             elem.addEventListener('click', () => {
-                const radio = document.getElementById(elem.id.slice(0, -4));
+                const radio = document.getElementById(elem.id.slice(0, -4)); // radio with id 'login' or `create`
                 const createCheck = document.getElementById('create-check');
                 const heading = document.getElementById('heading');
                 const submitButton = document.getElementById('submit');
+
                 radio.checked = true;
                 elem.classList = 'active';
 

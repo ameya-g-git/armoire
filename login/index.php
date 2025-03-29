@@ -19,6 +19,7 @@ if ($loggedIn) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
     <script src="../js/login-mode.js"></script>
+    <script src="../js/login-valid.js"></script>
     <title>Login</title>
 </head>
 
@@ -41,11 +42,11 @@ if ($loggedIn) {
                 </div>
             </section>
             <fieldset>
-                <legend>username</legend>
+                <legend for="username">Username</legend>
                 <input type="text" name="username" id="username">
             </fieldset>
             <fieldset>
-                <legend>password</legend>
+                <legend for="password">Password</legend>
                 <input type="password" name="password" id="password">
             </fieldset>
             <input hidden type="checkbox" name="create-check" id="create-check">
