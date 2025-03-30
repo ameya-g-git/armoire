@@ -11,12 +11,14 @@ include "../php/connect_local.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
     <script src="../js/add-market.js"></script>
+    <script type="module" src="../js/post-valid.js"></script>
     <title>Dashboard</title>
 </head>
 
 <body>
     <div id="form">
-        <form action="post.php" method="post">
+        <form id="post-details" action="post.php" method="post">
+            <span id="post-disc">* make sure your post has no errors before submitting!</span>
             <fieldset>
                 <legend for="title">title</legend>
                 <input type="text" name="title" id="title">
@@ -30,7 +32,6 @@ include "../php/connect_local.php";
                 list on marketplace?
             </label>
             <div id="marketplace-input">
-                <hr>
                 <fieldset>
                     <legend for="price">price</legend>
                     <input type="number" step="0.01" min="1" name="price" id="price">
@@ -40,7 +41,7 @@ include "../php/connect_local.php";
                     <input type="number" step="1" min="1" max="100" name="stock" id="stock">
                 </fieldset>
             </div>
-            <input id="submit" type="submit" value="post!">
+            <input id="make-post" type="submit" value="post!">
         </form>
     </div>
 </body>
