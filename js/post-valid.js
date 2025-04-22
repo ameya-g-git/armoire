@@ -1,5 +1,10 @@
+// Ameya Gupta
+// Apr. 14th 2025
+// Post Creation - Form Validation
+
 import validate from './validate.js';
 
+// client-side validation for post form
 window.addEventListener('load', () => {
     let permController = new AbortController();
     let optionalController = new AbortController();
@@ -8,12 +13,6 @@ window.addEventListener('load', () => {
     const listOnMarket = document.getElementById('market');
     const price = document.getElementById('price');
     const stock = document.getElementById('stock');
-
-    function addDisclaimer() {
-        document.getElementById('post-details').children = document
-            .getElementById('post-details')
-            .children.slice(1);
-    }
 
     const formState = {
         title: false,
@@ -67,12 +66,8 @@ window.addEventListener('load', () => {
         }
 
         if (listOnMarket.checked && !(formState.price && formState.stock)) {
-            console.log('check');
             e.preventDefault();
             document.getElementById('post-disc').style.display = 'block';
         }
     });
-
-    // validate(title, /.{1,50}/, 'title cannot be longer than 50 chars.');
-    // validate(title, /.{1,50}/, 'title cannot be longer than 50 chars.');
 });
