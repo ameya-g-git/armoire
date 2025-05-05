@@ -1,0 +1,311 @@
+#beige {
+
+    background-color: #fff6e7;
+    position: relative;
+    z-index: 1;
+
+}
+
+#background-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    z-index: -1;
+    overflow: hidden; 
+}
+
+#background-svg svg {
+    width: 1500px;
+}
+
+#titleText1 {
+
+    font-size: 100px;
+
+
+    font-weight: 400;
+    line-height: 0; 
+    font-family: Fraternite;
+
+}
+
+#titleText2 {
+
+    font-size: 200px;
+
+
+    line-height: 0; 
+
+    font-weight: 400;
+    font-family: Fraternite;
+    
+
+}
+
+
+body {
+    margin-top: 0%;
+    margin-left: 0%;
+    margin-right: 0%;
+
+    background-color: bisque;
+    margin-bottom: 0%;
+    font-family: sans-serif;
+    
+    
+
+}
+
+
+
+#navDiv {
+
+
+    margin-left: 150px;
+    margin-right: 150px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 1000px;
+    background: #FFF6E7;
+    box-shadow: 0px 4px 4px 0px rgba(34, 0, 38, 0.15), 0px 11px 20.4px 0px rgba(0, 0, 0, 0.15);
+    justify-content: center; 
+
+}
+.navlink:hover {
+    background-color: black; 
+    color: #fff;  
+    border-radius: 15px;  
+}
+
+.navlink {
+
+
+    padding: 10px 15px;  
+    margin: 5px;
+    text-align: center;
+    width: auto; 
+    border-radius: 10px;
+    text-decoration: none;  
+    font-size: 16px; 
+    color: #333;  
+    font-weight: 600;  
+    transition: background-color 0.3s, color 0.3s; 
+
+
+}
+
+
+#background-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+img {
+    width: 100%;
+   
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#showcaseDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#showcaseTileDiv1,
+#showcaseTileDiv2 {
+    display: flex;
+    flex-direction: row;
+    margin: 50px;
+
+}
+
+#showcaseImgDiv1,
+#showcaseImgDiv2 {
+    width: 40%;
+   
+}
+
+#showcaseDescriptionDiv1,
+#showcaseDescriptionDiv2 {
+    width: 60%;
+    margin: 50px;
+    font-size: medium;
+}
+
+
+#header {
+    padding-bottom: 160px;
+}
+
+.button {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.button:hover {
+    transform: scale(1.05);
+}
+
+.button:active {
+    transform: scale(0.95);
+}
+
+#showcaseImgDiv1 {
+    border-radius: 15px;
+    position: relative;  
+    overflow: hidden;  
+    display: inline-block;  
+}
+
+#showcaseImgDiv2 {
+    border-radius: 15px;
+    position: relative;  
+    overflow: hidden;  
+    display: inline-block;  
+}
+
+#showcaseImgDiv1 img {
+    border-radius: 15px; 
+
+    transition: transform 0.3s, opacity 0.3s;  
+}
+
+#showcaseImgDiv2 img {
+    border-radius: 15px; 
+
+    transition: transform 0.3s, opacity 0.3s;  
+}
+
+
+#showcaseImgDiv1:hover img {
+    transform: scale(1.1);  
+    opacity: 0.9;  
+    
+}
+
+#showcaseImgDiv2:hover img {
+    transform: scale(1.1);  
+    opacity: 0.9;  
+    
+}
+
+#footer {
+    background-color: black;
+    color: white;
+    padding: 60px;
+    text-align: center;
+}
+
+
+@media (max-width: 768px) {
+    #navDiv {
+        margin-left: 0px;
+        margin-right: 0px;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 20px;
+        padding: 10px;
+    }
+
+    .navlink {
+        padding: 8px 12px;
+        font-size: 14px;
+        margin: 5px 0;
+    }
+
+    #titleText1 {
+        font-size: 60px;
+        line-height: 60%;
+        text-align: center;
+    }
+
+    #titleText2 {
+        font-size: 100px;
+        line-height: 60%;
+        text-align: center;
+    }
+
+    #showcaseTileDiv1, #showcaseTileDiv2 {
+        flex-direction: column;
+        align-items: center;
+        margin: 30px;
+    }
+
+    #showcaseImgDiv1, #showcaseImgDiv2 {
+        width: 80%;
+    }
+
+    #showcaseDescriptionDiv1, #showcaseDescriptionDiv2 {
+        width: 90%;
+        margin: 20px;
+        font-size: medium;
+    }
+
+    .button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    #footer {
+        padding: 30px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 425px) {
+    #titleText1 {
+        font-size: 40px;
+    }
+
+    #titleText2 {
+        font-size: 80px;
+    }
+
+    #navDiv {
+        margin: 10px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .navlink {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    #showcaseImgDiv1, #showcaseImgDiv2 {
+        width: 100%;
+    }
+
+    #showcaseDescriptionDiv1, #showcaseDescriptionDiv2 {
+        width: 100%;
+        font-size: small;
+    }
+
+    .button {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+
+
+
+ 
+
+
+}

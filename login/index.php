@@ -24,6 +24,17 @@ $auth = filter_input(INPUT_GET, 'auth', FILTER_SANITIZE_SPECIAL_CHARS);
 </head>
 
 <body>
+    <nav>
+        <a class="navlink" href="../">home</a>
+        <a class="navlink" href="../dashboard">dashboard</a>
+        <a class="navlink" href="../feed">feed</a>
+        <a class="navlink" href="../marketplace">marketplace</a>
+        <?php if ($isLoggedIn): ?>
+            <a class="navlink" href="../login/logout.php">log-out</a>
+        <?php else: ?>
+            <a class="navlink" href="../login">log-in</a>
+        <?php endif; ?>
+    </nav>
     <div id="form">
         <h1 id="heading">log in</h1>
         <?php if ($auth === 'fail') {

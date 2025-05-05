@@ -44,10 +44,7 @@ if ($title !== null && $title !== false && $content !== null && $content !== fal
             $img_stmt = $dbh->prepare($img_cmd);
             $img_success = $img_stmt->execute($img_params);
         }
-
-        header("Location: ./index.php");
     }
-} else {
-    header("Location: ./index.php?auth=false");
 }
+header("Location: ./index.php");
 ?>

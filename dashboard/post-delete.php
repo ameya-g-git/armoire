@@ -10,10 +10,6 @@ include "../php/connect_server.php";
 $isLoggedIn = isset($_SESSION['username']);
 $username = $isLoggedIn ? $_SESSION['username'] : '';
 
-// just for testing:
-// $isLoggedIn = true;
-// $username = "anita";
-
 $response = [
     'success' => false,
     'message' => 'nothing was specified as what to do'
@@ -62,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['post_id']) && is_nume
         $dbh->commit();
 
         $response['success'] = true;
-        $response['message'] = 'post deleted :)))';
+        $response['message'] = 'post deleted :)))'; // :)
     } catch (Exception $e) {
         $dbh->rollBack();
         $response['message'] = 'database error: ' . $e->getMessage();

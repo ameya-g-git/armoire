@@ -28,9 +28,14 @@ $loggedIn = $_SESSION["username"];
 <body>
     <nav>
         <a class="navlink" href="../">home</a>
+        <a class="navlink" href="../dashboard">dashboard</a>
         <a class="navlink" href="../feed">feed</a>
         <a class="navlink" href="../marketplace">marketplace</a>
-        <a class="navlink" href="../login">log-in</a>
+        <?php if ($isLoggedIn): ?>
+            <a class="navlink" href="../login/logout.php">log-out</a>
+        <?php else: ?>
+            <a class="navlink" href="../login">log-in</a>
+        <?php endif; ?>
     </nav>
     <div id="form">
         <form id="post-details" action="post.php" method="post" enctype="multipart/form-data">

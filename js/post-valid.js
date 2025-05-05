@@ -61,11 +61,13 @@ window.addEventListener('load', () => {
 
     document.getElementById('post-details').addEventListener('submit', (e) => {
         if (!(formState.title && formState.content)) {
+            // don't allow submit if there isn't a title and content
             e.preventDefault();
             document.getElementById('post-disc').style.display = 'block';
         }
 
         if (listOnMarket.checked && !(formState.price && formState.stock)) {
+            // don't allow post if the user has not filled in price and stock details, if they checked the listOnMarket checkbox
             e.preventDefault();
             document.getElementById('post-disc').style.display = 'block';
         }

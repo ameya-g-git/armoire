@@ -1,13 +1,12 @@
-<!-- 
-    Irene Chen
-    14/04/2025
-    Marketplace - Post Loading Functionality
--->
-
 <?php
+// Irene Chen
+// 14/04/2025
+// Marketplace - Post Loading Functionality
+
 header('Content-Type: application/json');
 include "../php/connect_server.php";
 
+// grab post data
 $posts = array();
 $command1 = "SELECT `username`, `title`, `content`, `date`, `post_id`, `ovation`, `price`, `stock` FROM `posts` WHERE `price` IS NOT NULL AND `stock` IS NOT NULL ORDER BY `date` DESC";
 $stmt1 = $dbh->prepare($command1);
@@ -18,6 +17,7 @@ if ($success1) {
     }
 }
 
+// grab image data for posts that have images
 $images = array();
 $command2 = "SELECT A.post_id, A.image_url FROM `images` A JOIN `posts` B ON A.post_id = B.post_id WHERE B.price IS NOT NULL AND B.stock IS NOT NULL ORDER BY B.date DESC";
 $stmt2 = $dbh->prepare($command2);

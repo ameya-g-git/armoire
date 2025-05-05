@@ -5,8 +5,9 @@
  * Anita Jiang
  * April 15, 2025
  * Post Editing Form
+ * Adapted from Ameya's post-form.php
  */
-include "../php/connect_server.php"; // change to appropriate location later.
+include "../php/connect_server.php";
 
 $isLoggedIn = isset($_SESSION['username']);
 $username = $isLoggedIn ? $_SESSION['username'] : '';
@@ -16,12 +17,13 @@ if (!$isLoggedIn) {
     exit;
 }
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
-    header("Location: index.php");
+    header("Location: index.php"); // redirect to dashboard page if post ID is malformed
     exit;
 }
 
 $postId = (int)$_GET['id'];
 
+// grab post details for current post
 $cmd = "SELECT * FROM posts WHERE post_id = ? AND username = ?";
 $stmt = $dbh->prepare($cmd);
 $stmt->execute([$postId, $username]);
@@ -32,6 +34,7 @@ if (!$post) {
     exit;
 }
 
+// grab image details for current post
 $cmd = "SELECT image_url FROM images WHERE post_id = ? LIMIT 1";
 $stmt = $dbh->prepare($cmd);
 $stmt->execute([$postId]);
@@ -51,6 +54,17 @@ $image = $stmt->fetch();
 </head>
 
 <body>
+    <nav>
+        <a class="navlink" href="../">home</a>
+        <a class="navlink" href="../dashboard">dashboard</a>
+        <a class="navlink" href="../feed">feed</a>
+        <a class="navlink" href="../marketplace">marketplace</a>
+        <?php if ($isLoggedIn): ?>
+            <a class="navlink" href="../login/logout.php">log-out</a>
+        <?php else: ?>
+            <a class="navlink" href="../login">log-in</a>
+        <?php endif; ?>
+    </nav>
     <div id="form">
         <form id="post-details" action="post-actions.php" method="post" enctype="multipart/form-data">
             <span id="post-disc" style="display: none;">* make sure your post has no errors before submitting!</span>

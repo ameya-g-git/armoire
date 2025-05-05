@@ -1,13 +1,14 @@
-<!-- 
-    Irene Chen
-    14/04/2025
-    Feed - Post Loading Functionality
--->
+
 
 <?php
-header('Content-Type: application/json');
-include "../php/connect_server.php";
+// Irene Chen
+// 14/04/2025
+// Feed - Post Loading Functionality
 
+include "../php/connect_server.php";
+header('Content-Type: application/json');
+
+// grab post details
 $posts = array();
 $command1 = "SELECT `username`, `title`, `content`, `date`, `post_id`, `ovation`, `price`, `stock` FROM `posts` ORDER BY `date` DESC";
 $stmt1 = $dbh->prepare($command1);
@@ -18,6 +19,7 @@ if ($success1) {
     }
 }
 
+// grab post images where they exist
 $images = array();
 $command2 = $command2 = "SELECT A.post_id, A.image_url FROM `images` A JOIN `posts` B ON A.post_id = B.post_id ORDER BY B.date DESC";
 $stmt2 = $dbh->prepare($command2);
@@ -29,6 +31,7 @@ if ($success2) {
     }
 }
 
+// encode as associative array
 $response = [
     "posts" => $posts,
     "images" => $images

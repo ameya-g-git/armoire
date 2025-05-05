@@ -21,7 +21,7 @@ window.addEventListener('load', function (event) {
                     <h3>${post['title']}</h3>
                     <span>${post['date']}</span>
                 </div>
-                <a href="view_post.php?id=${post['post_id']}" class="post-link">
+                <div href="" class="post-link">
                     <div class="post-content">
                         ${post['content']}
                         ${imgElem}
@@ -39,7 +39,7 @@ window.addEventListener('load', function (event) {
                                 : ''
                         }
                     </div>
-                </a>
+                </div>
             </div>`;
             parentElement.insertAdjacentHTML('beforeend', postHTML);
         }

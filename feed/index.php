@@ -28,8 +28,7 @@ $isLoggedIn = isset($_SESSION['username']);
         <a class="navlink" href="../feed">feed</a>
         <a class="navlink" href="../marketplace">marketplace</a>
         <?php if ($isLoggedIn): ?>
-            <a class="navlink" href="logout.php">log-out</a>
-            <!-- TODO add logout path -->
+            <a class="navlink" href="../login/logout.php">log-out</a>
         <?php else: ?>
             <a class="navlink" href="../login">log-in</a>
         <?php endif; ?>

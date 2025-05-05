@@ -316,6 +316,10 @@ img {
     align-items: center;
 }
 
+#header {
+    padding: 160px 64px;
+}
+
 #showcaseTileDiv1,
 #showcaseTileDiv2 {
     display: flex;
@@ -1399,7 +1403,7 @@ footer {
 }
 
 #feed {
-    padding-top: 10%;
+    padding: 10% 1rem 5%;
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(2, 50%);
